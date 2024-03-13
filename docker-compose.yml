@@ -1,0 +1,14 @@
+version: '3'
+services:
+
+  bot:
+    build: 
+      dockerfile: Dockerfile
+    volumes:
+      - .:/bot
+    container_name: bot_name
+    ports:
+      - '3000:3000'
+    environment:
+      - BOT_TOKEN=${BOT_TOKEN}
+    command: python run.py
